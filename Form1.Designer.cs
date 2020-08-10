@@ -32,6 +32,9 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,6 +54,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label2);
+            this.splitContainer1.Panel2.Controls.Add(this.label1);
+            this.splitContainer1.Panel2.Controls.Add(this.richTextBox3);
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox2);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 390;
@@ -66,9 +72,9 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(13, 12);
+            this.richTextBox2.Location = new System.Drawing.Point(13, 41);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(381, 364);
+            this.richTextBox2.Size = new System.Drawing.Size(381, 157);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
@@ -82,6 +88,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(13, 249);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(375, 164);
+            this.richTextBox3.TabIndex = 2;
+            this.richTextBox3.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(184, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(184, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -92,6 +124,7 @@
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -104,6 +137,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox3;
     }
 }
 

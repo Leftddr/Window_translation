@@ -18,27 +18,45 @@ using System.Threading;
 using Newtonsoft.Json.Linq;
 using System.Web;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 
 namespace WindowsFormsApp5
 {
     public partial class Form1 : Form
     {
-        [DllImport("User32.dll")]
-        private static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, int dwExtraInfo);
-        private static int Cur_x, Cur_y;
-        private static int Loop_cun;
-
-        private const uint L_down = 0x0002;
-        private const uint L_up = 0x0004;
-
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "Naver Translation";
+            label2.Text = "Kakao Translation";
+            label1.Font = new Font("맑은고딕", 15, FontStyle.Bold);
+            label2.Font = new Font("맑은고딕", 15, FontStyle.Bold);
             richTextBox1.Text = "Input text";
             button1.Text = "번역";
             richTextBox1.GotFocus += richTextBox1_GotFocus;
             richTextBox1.LostFocus += richTextBox1_LostFocus;
+        }
+
+        public string run_cmd(string cmd, string args)
+        {
+            ProcessStartInfo start = new ProcessStartInfo();
+            start.FileName = @"C:\Users\lg\AppData\Local\Programs\Python\Python38-32\python.exe";
+            start.Arguments = string.Format("\"{0}\" \"{1}\"", cmd, args);
+            start.UseShellExecute = false;
+            start.CreateNoWindow = true;
+            start.RedirectStandardOutput = true;
+            start.RedirectStandardError = true;
+            using (Process process = Process.Start(start))
+            {
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string stderr = process.StandardError.ReadToEnd();
+                    Console.WriteLine(stderr);
+                    string result = reader.ReadToEnd();
+                    return result;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +72,10 @@ namespace WindowsFormsApp5
             System.Drawing.Font newFont = new Font("Verdana", 10f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 178, false);
             richTextBox2.Text = translated_text;
             richTextBox2.Font = new Font("맑은고딕", 20, FontStyle.Bold);
+
+            string data = source_lang + " " + richTextBox1.Text;
+            richTextBox3.Text = this.run_cmd("kakao_translation.py", data);
+            richTextBox3.Font = new Font("맑은고딕", 20, FontStyle.Bold);
         }
 
         private void richTextBox1_GotFocus(object sender, EventArgs e)
@@ -76,8 +98,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://openapi.naver.com/v1/papago/n2mt";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", "Input");
-            request.Headers.Add("X-Naver-Client-Secret", "Input");
+            request.Headers.Add("X-Naver-Client-Id", "");
+            request.Headers.Add("X-Naver-Client-Secret", "");
             request.Method = "POST";
             string query = input_text;
             string data = "";
@@ -112,8 +134,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://openapi.naver.com/v1/papago/detectLangs";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", "Input");
-            request.Headers.Add("X-Naver-Client-Secret", "Input");
+            request.Headers.Add("X-Naver-Client-Id", "");
+            request.Headers.Add("X-Naver-Client-Secret", "");
             request.Method = "POST";
             string query = input_text;
             byte[] byteDataParams = Encoding.UTF8.GetBytes("query=" + query);

@@ -11,3 +11,17 @@ C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsForm
 C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.csproj.CopyComplete
 C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.exe
 C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\obj\Debug\WindowsFormsApp5.pdb
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.Modules.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.SQLite.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.Wpf.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Scripting.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.Modules.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.SQLite.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\IronPython.Wpf.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Scripting.xml
+C:\Users\lg\source\repos\WindowsFormsApp5\WindowsFormsApp5\bin\Debug\Microsoft.Scripting.Metadata.xml
