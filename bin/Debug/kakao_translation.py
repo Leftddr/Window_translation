@@ -21,5 +21,5 @@ if __name__ == '__main__':
     sys_split = sys.argv[1].split(' ')
     text = ''
     for i in range(1, len(sys_split)):
-        text += sys_split[i]
+        text += sys_split[i] + ' '
     main(sys_split[0], text)
