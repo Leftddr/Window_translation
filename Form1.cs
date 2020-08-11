@@ -272,8 +272,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://naveropenapi.apigw.ntruss.com/nmt/v1/translation";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", "4fya1pk00w");
-            request.Headers.Add("X-NCP-APIGW-API-KEY", "nzJgKk9pHsjaAKu9ebvqyFZXDHJZUJLyyl6fD0Pu");
+            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", "");
+            request.Headers.Add("X-NCP-APIGW-API-KEY", "");
             request.Method = "POST";
             string query = input_text;
             string data = "";
@@ -321,8 +321,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://openapi.naver.com/v1/papago/detectLangs";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", "UqOG3YBOY6pd6N7ZZn9U");
-            request.Headers.Add("X-Naver-Client-Secret", "np3F6uH6mJ");
+            request.Headers.Add("X-Naver-Client-Id", "");
+            request.Headers.Add("X-Naver-Client-Secret", "");
             request.Method = "POST";
             string query = input_text;
             byte[] byteDataParams = Encoding.UTF8.GetBytes("query=" + query);
