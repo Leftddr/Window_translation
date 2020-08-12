@@ -228,7 +228,14 @@ namespace WindowsFormsApp5
             richTextBox2.Text = translated_text;
             richTextBox2.Font = new Font("맑은고딕", 20, FontStyle.Bold);
 
-            string data = source_lang + " " + richTextBox1.Text;
+            string[] tmp_str = richTextBox1.Text.Split(new char[] { '\n' });
+            string tmp = "";
+            for (int i = 0; i < tmp_str.Length; i++)
+            {
+                if (tmp_str[i] == "") continue;
+                tmp += tmp_str[i] + " ";
+            }
+            string data = source_lang + " " + tmp;
             richTextBox3.Text = run_cmd("kakao_translation.py", data);
             richTextBox3.Font = new Font("맑은고딕", 20, FontStyle.Bold);
         }
@@ -272,8 +279,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://naveropenapi.apigw.ntruss.com/nmt/v1/translation";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", "");
-            request.Headers.Add("X-NCP-APIGW-API-KEY", "");
+            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", "4fya1pk00w");
+            request.Headers.Add("X-NCP-APIGW-API-KEY", "nzJgKk9pHsjaAKu9ebvqyFZXDHJZUJLyyl6fD0Pu");
             request.Method = "POST";
             string query = input_text;
             string data = "";
@@ -304,7 +311,7 @@ namespace WindowsFormsApp5
             }
             catch (WebException e)
             {
-                string result = run_cmd("error_check.py", input_text);
+                string result = run_cmd("error_check.py", source_lang + " " + input_text);
                 if(result != null)
                 {
                     MessageBox.Show(result, "오류 발견");
@@ -321,8 +328,8 @@ namespace WindowsFormsApp5
         {
             string url = "https://openapi.naver.com/v1/papago/detectLangs";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", "");
-            request.Headers.Add("X-Naver-Client-Secret", "");
+            request.Headers.Add("X-Naver-Client-Id", "UqOG3YBOY6pd6N7ZZn9U");
+            request.Headers.Add("X-Naver-Client-Secret", "np3F6uH6mJ");
             request.Method = "POST";
             string query = input_text;
             byte[] byteDataParams = Encoding.UTF8.GetBytes("query=" + query);
